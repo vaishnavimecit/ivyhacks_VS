@@ -1,7 +1,7 @@
 # ivyhacks_VS
 ## Social project for IvyHacks
-Vaishnavi Gopalakrishnan
-Sri Harsha Varma Konda
+### 1. Vaishnavi Gopalakrishnan
+### 2. Sri Harsha Varma Konda
 
 ### 1. Creativity: How original is the hack?
 Our idea is to create a web page that will offer several adventure trips like water rafting, hiking, kayaking, camping. It will provide the adventurers to find others who like to do the same, find events and register or unregister for the same. The value of this application is to create a social network for people who love adventures.

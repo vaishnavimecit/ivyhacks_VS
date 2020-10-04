@@ -75,11 +75,12 @@ const main = async () => {
     tourGuide : 'Vaishnavi',
     price : '$100',
     maxUsers: 1,
-    eventDate: date.setDate(date.getDate() - 12),
+    eventDate: date.setDate(date.getDate() + 12),
     eventStatus: 'open'
   }
 
   await events.createEvent(newEvent,tourg._id.toString())
+  
 
   console.log('Done seeding the database');
   await db.serverConfig.close();

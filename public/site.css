@@ -13,6 +13,8 @@ body{
     overflow: hidden;
 }
 
+
+
 ul{
     margin: 0;
     padding: 0;
@@ -173,21 +175,27 @@ article#main-col{
 }
 table {
     border-collapse: collapse;
-  }
+}
   
-  table, th, td {
-    border: 1px solid black;
-  }
+table, th, td {
+border: 1px solid black;
+}
+
 div.etable{
     text-align: center;
-    float: left;
+    float: center;
     position: relative;
 }
+
+div.etable > h3{
+    float: right;
+}
+
 footer{
     color: #ffffff;
     background-color: #b46100;
     text-align: center;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }

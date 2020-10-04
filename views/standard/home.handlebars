@@ -1,0 +1,42 @@
+<div class="container">
+    <section id="boxes">
+        <div class="box">
+            <img src="../../public/img/Logo.jpg" alt="Who we are" />
+            <h3>WHO WE ARE?</h3>
+            <p>Ahoy! All adventure freaks! Will ya' like to blow down by the beauty of nature amidst sea, land and mountains? Aye! Then go ahead, We are here to immerse yourself in an outdoor adventure filled with stunning contrasts: intimate and communal, spontaneous and purposeful, raw and rich.</p>
+        </div>
+        <div class="box">
+            <img src="../../public/img/weguide.jpg" alt="what we do" />
+            <h3>WHAT WE DO?</h3>
+            <p>We offer a wide range of outdoor pursuits including Hiking, Mountaineering, Swimming, and more. With us, you'll criss-cross dense forests, lush valleys, high altitude cold deserts, get off the beaten track, participate in adventure sports activities and much more fun!</p>
+        </div>
+        <div class="box">
+            <img src="../../public/img/adventure.png" alt="what happens here" />
+            <h3>WHAT HAPPENS HERE?</h3>
+            <p>When you take a trip with us, you can enjoy the deep forest camping, stay with tribals, road jeep ride trips, jungle safaris and peak climbing expeditions. Join in the community where travel explorers and tour guides teach you of how to indulge in the mind-blowing adventure!</p>
+        </div>
+    </section>
+    <div class="etable"> 
+    {{#if events}}
+    {{#if expreq.session.authed}}
+    
+    <h3>Upcomming Registered Events for the week!!!</h3>
+    {{else}}
+    <h3>Upcomming Events for the week!!!</h3>
+    {{/if}}
+    <table align="center"> 
+        <thead>
+            <tr><td>Event Name</td><td>Event Type</td><td>Location</td><td>Date</td><td>Action</td></tr>
+        </thead>
+        <tbody>
+            {{#each events}}
+            <tr><td>{{description}}</td><td>{{name}}</td><td>{{location}}</td><td>{{eventDate}}</td><td><a href="/events/single/{{_id}}">View</a></td></tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h3>No Upcoming Events for you!!!</h3>
+    {{/if}}
+<br><br><br><br><br>
+</div></div>
+<link href="../public/site.css" rel="stylesheet">

@@ -1,0 +1,35 @@
+<h2> Sign Up </h2>
+<button class='button_1' type="button"><a href='signin'>Sign In</a></button>
+<div id="id01" class="modal">
+    <br><br><br>
+    <form method='post' action='/users/newuser' class="forms"> 
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">Click here to close form</span>
+    <br>
+        <label for='firstName'>First Name:
+            <input type='text' name='firstName' id='firstName' class='firstName' required/>
+        </label>
+        <label for='lastName'> Last Name:
+            <input type='text' name='lastName' id='lastName' class='lastName' required/>
+        </label>
+        <br><br>
+        <label for='email'>EMail:
+            <input type='email' name='email' id='email' class='email' required/>
+        </label>
+        <br><br>
+        <label for='location'>Zip Code:
+            <input type='text' name='location' id='location' pattern="[0-9]{5}" class='location' required/>
+        </label>
+        <br><br>
+        <label for='username'> Login ID:
+            <input type='text' name='loginID' id='loginID' class='loginID' required/>
+        </label>
+        <label for='password'>Password:
+            <input type='password' name='password' id='password' class='password' required/>
+        </label>
+        <br>
+        <button id="lefbtn" class="button_1" type='submit' value="Submit">Sign Up</button>
+    </form>
+</div>
+<br><br><br>
+<link href="../../public/site.css" rel="stylesheet">
+<script src="../../public/script.js"></script>

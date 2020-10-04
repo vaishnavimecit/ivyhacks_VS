@@ -1,0 +1,13 @@
+
+<h2>Events in the next 7 Days</h2></br>
+{{#if cancreate }}
+<a href="/events/create">Create New Event</a>
+{{/if}}<br>
+<table border='1'><thead><tr><td>Event Name</td><td>Event Type</td><td>Location</td><td>Option</td></tr></thead><tbody>
+
+{{#each events}}
+<tr><td>{{name}}</td><td>{{location}}</td><td>{{location}}</td><td><a href="/events/single/{{_id}}">View</a></td></tr>
+{{/each}}
+
+</tbody></table>
+<link href="../public/site.css" rel="stylesheet">

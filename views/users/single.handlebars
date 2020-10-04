@@ -1,0 +1,23 @@
+<section id="main">
+    <div class="container">
+        <article id="main-col">
+            <h2 class="page-title">All Past/Future Registered Events</h2>
+            <br> {{#if events}}
+            <table>
+                <thead><tr><td>Event Name</td><td>Event Type</td><td>Location</td><td>Date</td><td>Action</td></tr>
+                </thead>
+                <tbody>
+                {{#each events}}
+                <tr><td>{{description}}</td><td>{{name}}</td><td>{{location}}</td><td>{{eventDate}}</td><td><a href="/events/single/{{_id}}">View</a></td></tr>
+                {{/each}}
+                </tbody>
+            </table>
+               {{else}}
+    <h3>No Upcoming Events</h3>
+    {{/if}}
+        </article>
+        <br><br><br>
+    </div>
+</section>
+
+<link href="../public/site.css" rel="stylesheet">

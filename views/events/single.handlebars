@@ -1,0 +1,72 @@
+<section>
+<h2>Welcome Trekker</h2><br>
+<p id="result"></p>
+<div id='eventinfo'>
+    <h3>Event Name: {{event.description}}</h3>
+    <h4>Event Type: {{event.name}}</h4>
+    <h4 id="location">Location: {{event.location}}</h4>
+    <h4>Tour Guide: {{event.tourGuide}}</h4>
+    <h4>Price: {{event.price}}</h4>
+    <h4>Event Date: {{event.eventDate}}</h4>
+    <h4 id="cweather">Weather: Weather Data not found</h4>
+
+        {{#if event.regdUsers }}
+            <h4>Registered Users:</h4>
+    <table>
+    
+    </thead>
+    <tbody>
+    {{#each event.regdUsers}}
+        <tr><td>{{fname}}</td><td>{{lname}}</td></tr>
+    {{/each}}
+    </tbody>
+    </table>
+    <br><br>
+    {{/if}}
+    {{#if owner }}
+    <form method='post'>
+        <input type="text" name='type' value="delete" hidden>
+        <input type="text" name='id' value={{event._id}} hidden> 
+        <button type="submit" value="Delete">Delete</button>
+        
+    </form>
+    <a href='/events/update/{{event._id}}'><input type="submit" value="Update Record"></a>
+
+    {{/if}}
+
+    {{#if registered }}
+    <form method='post' action="/users/unregevent">
+        <input type="text" name='eventId' value={{event._id}} hidden> 
+        <button  type="submit" value="Unregister">Unregister</button>
+    </form>
+    {{else}}
+    <form method='post' action="/users/regevent">
+        <input type="text" name='eventId' value={{event._id}} hidden> 
+        <button type="submit" value="Register">Register</button>
+    </form>
+    {{/if}}
+</div>
+</section>
+
+<!--Current weather codition fetched using AJAX-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    
+    jQuery(function() {
+    var zip = '{{event.location}}';
+    if (zip !== '') {
+      $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=c57db815030bf1a17fb8dd9a0e14d00c&units=imperial",
+        dataType: "jsonp",
+        success: function(wallOfText) {
+          var city = wallOfText.name;
+          var country = wallOfText.sys.country;
+          $("#location").text('Location: '+city +', '+country+ ' {{event.location}}');
+          $("#cweather").html('Current Weather Conditions: <br><table><tr><td>Temp</td><td>'+ wallOfText.main.temp  
+              +'F</td><tr><td>Conditions</td><td>'+ wallOfText.weather[0].description +'</td></tr></table>');
+        }
+      });
+    
+  }});
+</script>
+<link href="../../public/site.css" rel="stylesheet">

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset ="utf-8">
+        <meta name="description" content="Explore the world">
+        <meta name="keywords" content="trekking, hiking, adventures">
+        <meta name="author" content="CS 546 B Group 10">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/ico" href="/public/img/Logo.ico" />
+        <title>Trek The World | Welcome</title> 
+        <link rel="stylesheet" href="/public/site.css" />
+    </head>
+
+<body>
+<header>
+    <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">TREK </span>THE WORLD</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="current"><a href='/'>Home</a></li>
+                <li><a href='/events/multiple'>Events</a></li>
+                <li><a href='/standard/contact'>Contact Us</a></li>
+                {{#if expreq.session.authed}}
+                <li><a href='/users/userpage'>My Page</a></li>
+                <li><a href='/users/logout'> Sign-Out</a></li>
+                {{else}}
+                <li><a href='/users/signin'> Sign-In</a></li>
+                {{/if}}
+                {{#if admin}}
+                <li><a href='/admin'> Admin Portal</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="left"> 
+     {{{body}}}
+</div>
+<footer>
+    <p>Trek The World, Copyright &copy; Fall 2019</p>
+</footer>
+</body>
+</html>

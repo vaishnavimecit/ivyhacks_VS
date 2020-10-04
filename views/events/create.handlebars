@@ -1,0 +1,13 @@
+
+<form method="post" action="/events">
+<label for="name">Event Type: </label><input type="text" name="eventName" required><br>
+<label for="description">Event Description: </label>: </label><input type="text" name="eventDesc" required><br>
+<label for="location">Event Zip Code: </label><input type="text" pattern="[0-9]{5}" name="location" required><br>
+<label for="tourGuide">Tour Guide: </label><input type="text" name="tourGuide" required><br>
+<label for="price">Price: </label><input type="text" name="price" required><br>
+<label for="maxUsers">Max Users: </label><input type="text" name="maxUsers" required><br>
+<label for="eventDate">Event Date: </label><input type="datetime-local" class="form-control" name="eventDate" placeholder="" required><br>
+  <button type="submit" value="Submit">Create</button>
+</form>
+
+<link href="../public/site.css" rel="stylesheet">

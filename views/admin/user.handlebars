@@ -1,0 +1,40 @@
+<h1> Update </h1>
+<h3 id="done"></h3>
+<form method='post' action='/admin/users/update'> 
+<input type='text' name='id' id='id' value='{{user._id}}' hidden/>
+    <label for='firstName'>First Name:
+        <input type='text' name='firstName' id='firstName' class='firstName' value='{{user.fname}}' required/>
+    </label>
+    <br>
+    <label for='lastName'> Last Name:
+        <input type='text' name='lastName' id='lastName' class='lastName' value='{{user.lname}}' required/>
+    </label>
+   
+    <br>
+    <label for='email'>Email:
+        <input type='text' name='email' id='email' class='email' value='{{user.email}}' required/>
+    </label>
+    <br>
+    <label for='location'>Location:
+        <input type='text' name='location' id='location' class='location' value='{{user.location}}' required/>
+    </label>
+
+    <br>
+     <label for='accesslevel'> Access level:
+        <select name='accesslevel' id='accesslevel' class='accesslevel'/>
+    <option value={{user.accesslevel}}></option>
+    <option value="1">User</option>
+    <option value="2">Tour Guide</option>
+    <option value="3">Admin</option>
+  </select><br><br>
+    </label>
+    <input type='submit' value="Update">
+</form>
+
+<link href="../../../public/site.css" rel="stylesheet">
+<script>
+    let searchParams = new URLSearchParams(window.location.search);
+    if(searchParams.has('updated')){
+        document.getElementById("done").innerHTML="User Updated";
+    }
+</script>

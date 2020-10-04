@@ -1,0 +1,32 @@
+<section id="main">
+    <div class="container">
+        <article id="main-col">
+            <h2 class="page-title">All events</h2>
+            {{#if cancreate }}
+            <button><a href="/events/create">Create New Event</a></button>
+            {{/if}}<br>
+            <table>
+                <thead><tr><td>Event Name</td><td>Event Type</td><td>Location</td><td>Date</td><td>Action</td></tr>
+                </thead>
+                <tbody>
+                {{#each events}}
+                <tr><td>{{description}}</td><td>{{name}}</td><td>{{location}}</td><td>{{eventDate}}</td><td><a href="/events/single/{{_id}}">View</a></td></tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+        <br><br><br>
+        <aside id="sidebar">
+            <div class="dark">
+                <h3>Hiking</h3>
+                <p>Hiking is the preferred term, in Canada and the United States(Trekking in Asia), for a long, vigorous walk, usually on trails (footpaths), in the countryside, while the word walking is used for shorter, particularly urban walks.</p>
+                <h3>Rafting</h3>
+                <p>Rafting and white water rafting are recreational outdoor activities which use an inflatable raft to navigate a river or other body of water. This is often done on whitewater or different degrees of rough water. Dealing with risk and the need for teamwork is often a part of the experience.</p>
+                <h3>Bungee Jumping</h3>
+                <p>Bungee jumping (which is the usual spelling in New Zealand and several other countries) is an activity that involves jumping from a tall structure while connected to a large elastic cord.</p>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<link href="../public/site.css" rel="stylesheet">

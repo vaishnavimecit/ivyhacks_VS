@@ -1,0 +1,10 @@
+<h2>list of users</h2></br>
+<br>
+<table><thead><tr><td>Name</td><td>Email</td><td>Option</td></tr></thead><tbody>
+
+{{#each users}}
+<tr><td>{{fname}} {{lname}}</td><td>{{email}}</td><td><a href="/admin/users/{{_id}}">Edit</a></td></tr>
+{{/each}}
+
+</tbody></table>
+<link href="../public/site.css" rel="stylesheet">
